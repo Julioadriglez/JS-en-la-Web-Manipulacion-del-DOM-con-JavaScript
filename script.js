@@ -1,7 +1,10 @@
 const btn = document.querySelector('[data-form-btn]');
+
 console.log(btn);
 
-btn.addEventListener("click", function(){
-    console.log("Crear tarea")
-})
+btn.addEventListener("click", function () {
+    const input = document.querySelector('[data-form-input]');
+    console.log("Crear tarea");
+    console.log(input.value);
+});
 
