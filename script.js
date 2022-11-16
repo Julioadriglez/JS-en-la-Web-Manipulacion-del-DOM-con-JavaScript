@@ -14,14 +14,11 @@
         titleTask.classList.add("task");
         titleTask.innerText = value;
         taskContent.appendChild(checkComplete());
-        taskContent.appendChild(titleTask)
-        const content = `
-            ${checkComplete()}
-            <i class="fas fa-trash-alt trashIcon icon"></i>`
+        taskContent.appendChild(titleTask);
         //task.innerHTML = content;//manda el contenido al formulario
         task.appendChild(taskContent);
+        task.appendChild(deleteIcon());
         list.appendChild(task);
-        console.log(content);
     };
 
     //Arrow functions o funciones anonimas
@@ -39,7 +36,16 @@
         element.classList.toggle("fas"); //agrega fas la clase 
         element.classList.toggle("completeIcon"); //togle verifica si exixte la clase si existe la quita y sino la pone
         element.classList.toggle("far"); //elinima la clase 
-
+    };
+    const deleteIcon = () => {
+        const i = document.createElement("i");
+        i.classList.add("fas", "fa-trash-alt", "trashIcon", "icon");
+        i.addEventListener('click',delateTask);
+        return i;
+    };
+    const delateTask = (event) => {
+        const parent = event.target.parentElement;
+        parent.remove();//remove() elmina todo lo que se le paso en parent
     };
 })();
 
