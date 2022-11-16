@@ -12,7 +12,8 @@ const createTask = (evento) => {
         <span class="task">${value}</span>
         </div>
         <i class="fas fa-trash-alt trashIcon icon"></i>`
-    task.innerHTML = content;
+    task.innerHTML = content;//manda el contenido al formulario
+    
     console.log(content);
 }
 console.log(btn);
